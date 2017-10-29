@@ -14,6 +14,6 @@ app.post('/students', student.addStudent);
 app.put('/students/:id', student.updateStudent);
 app.delete('/students/:id', student.deleteStudent);
 
-app.listen(4000);
+app.listen(process.env.PORT || 4000)
 console.log('We are live on port 4000');
 
