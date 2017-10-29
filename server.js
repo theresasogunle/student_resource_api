@@ -8,7 +8,7 @@ app.configure(function () {
     app.use(express.bodyParser());
 });
 
-app.get('/students', student.findAll);
+app.get('/', student.findAll);
 app.get('/students/:id', student.findById);
 app.post('/students', student.addStudent);
 app.put('/students/:id', student.updateStudent);
