@@ -2,7 +2,7 @@ var mongo = require('mongodb');
 
 // Connect to the database before starting the application server.
 
-/*
+
 
 var Server = mongo.Server,
     Db = mongo.Db,
@@ -25,7 +25,7 @@ db.open(function(err, db) {
     }
 });
 
-*/
+
 exports.findById = function(req, res) {
     var id = req.params.id;
     console.log('Retrieving student with an id of  : ' + id);
