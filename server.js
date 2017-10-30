@@ -59,7 +59,7 @@ app.post('/api/create', routes.create); // API create route and callback (see /r
 app.get('/api/get/:id', routes.getOne); // API retrieve 1 route and callback (see /routes/index.js)
 app.get('/api/get', routes.getAll); // API retrieve all route and callback (see /routes/index.js)
 app.put('/api/update/:id', routes.update); // API update route and callback (see /routes/index.js)
-app.get('/api/delete/:id', routes.remove); // API delete route and callback (see /routes/index.js)
+app.delete('/api/delete/:id', routes.remove); // API delete route and callback (see /routes/index.js)
 
 // if route not found, respond with 404
 app.use(function(req, res, next){
