@@ -5,7 +5,7 @@ var Server = mongo.Server,
     BSON = mongo.BSONPure;
 
 var server = new Server('localhost', 27017, {auto_reconnect: true});
-var db = mongo.db(process.env.MONGOLAB_URI, {native_parser:true});
+var db = mongo.Db(process.env.MONGOLAB_URI, {native_parser:true});
 
 //new database
 //db = new Db('studentdb', server);
