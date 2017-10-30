@@ -52,7 +52,7 @@ exports.create = function(req,res){
    
 
       var person = Person({
-        surname: name,
+        surname: surname,
         firstname: firstname,
         matric_number: matric_number,
         level:level
