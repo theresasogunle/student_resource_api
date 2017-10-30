@@ -1,13 +1,10 @@
-//var mongo = require('mongodb');
+var mongo = require('mongodb');
 //const MongoClient = require('mongodb').MongoClient;
 //const MONGO_URL = 'mongodb://heroku_xd1klxrw:rablvlts8rh90jltjif602ng32@ds051740.mlab.com:51740/heroku_xd1klxrw';
-var mongodb = require("mongodb");
-mongodb.MongoClient.connect(process.env.MONGODB_URI, function (err, database) {
-  if (err) {
-    console.log(err);
-    process.exit(1);
-  };
-/*
+
+// Connect to the database before starting the application server.
+
+  /*
 var Server = mongo.Server,
     Db = mongo.Db,
     BSON = mongo.BSONPure;
