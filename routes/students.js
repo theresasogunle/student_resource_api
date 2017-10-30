@@ -1,12 +1,15 @@
 var mongo = require('mongodb');
 
 // Connect to the database before starting the application server.
+var mongoose = require('mongoose');
+app.db = mongoose.connect(process.env.MONGODB_URI);
+/*
 
 var Server = mongo.Server,
     Db = mongo.Db,
     BSON = mongo.BSONPure;
 
-var server = new Server('localhost', 27017, {auto_reconnect: true});
+var server = new Server('localhost', 27017||process.env.MONGODB_URI, {auto_reconnect: true});
 //new database
 db = new Db('studentdb', server);
 //database authentication
@@ -23,7 +26,7 @@ db.open(function(err, db) {
     }
 });
 
-
+*/
 exports.findById = function(req, res) {
     var id = req.params.id;
     console.log('Retrieving student with an id of  : ' + id);
