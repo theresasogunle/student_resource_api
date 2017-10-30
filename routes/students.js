@@ -2,8 +2,9 @@ var mongo = require('mongodb');
 
 // Connect to the database before starting the application server.
 
-
-
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://root:root@ds123410.mlab.com:23410/heroku_2snqp2d4');
+/*
 var Server = mongo.Server,
     Db = mongo.Db,
     BSON = mongo.BSONPure;
@@ -25,7 +26,7 @@ db.open(function(err, db) {
     }
 });
 
-
+*/
 exports.findById = function(req, res) {
     var id = req.params.id;
     console.log('Retrieving student with an id of  : ' + id);
