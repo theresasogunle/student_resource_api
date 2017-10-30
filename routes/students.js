@@ -1,10 +1,7 @@
 var mongo = require('mongodb');
-//const MongoClient = require('mongodb').MongoClient;
-//const MONGO_URL = 'mongodb://heroku_xd1klxrw:rablvlts8rh90jltjif602ng32@ds051740.mlab.com:51740/heroku_xd1klxrw';
 
 // Connect to the database before starting the application server.
 
-  /*
 var Server = mongo.Server,
     Db = mongo.Db,
     BSON = mongo.BSONPure;
@@ -26,7 +23,7 @@ db.open(function(err, db) {
     }
 });
 
-*/
+
 exports.findById = function(req, res) {
     var id = req.params.id;
     console.log('Retrieving student with an id of  : ' + id);
