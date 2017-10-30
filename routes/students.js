@@ -47,14 +47,14 @@ exports.create = function(req,res){
     // pull out the name and location
     var surname = req.body.surname;
     var firstname = req.body.firstname;
-    var matric-number = req.body.matric-number;
+    var matric_number = req.body.matric_number;
     var level = req.body.level;
    
 
       var person = Person({
         surname: name,
         firstname: firstname,
-        matric-number: matric-number,
+        matric_number: matric_number,
         level:level
         
       });
@@ -159,7 +159,7 @@ exports.update = function(req,res){
     
     var surname = req.body.surname;
     var firstname = req.body.firstname;
-    var matric-number = req.body.matric-number;
+    var matric_number = req.body.matric_number;
     var level = req.body.level;
    
 
@@ -168,7 +168,7 @@ exports.update = function(req,res){
       var dataToUpdate = {
         surname: name,
         firstname: firstname,
-        matric-number: matric-number,
+        matric_number: matric_number,
         level:level
         
       };
