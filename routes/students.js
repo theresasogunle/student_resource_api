@@ -1,11 +1,12 @@
 //var mongo = require('mongodb');
-const MongoClient = require('mongodb').MongoClient;
-const MONGO_URL = 'mongodb://root:root@ds051740.mlab.com:51740/heroku_xd1klxrw';
-MongoClient.connect(MONGO_URL, (err, db) => {  
+//const MongoClient = require('mongodb').MongoClient;
+//const MONGO_URL = 'mongodb://heroku_xd1klxrw:rablvlts8rh90jltjif602ng32@ds051740.mlab.com:51740/heroku_xd1klxrw';
+var mongodb = require("mongodb");
+mongodb.MongoClient.connect(process.env.MONGODB_URI, function (err, database) {
   if (err) {
-    return console.log(err);
+    console.log(err);
+    process.exit(1);
   }
-  });
 /*
 var Server = mongo.Server,
     Db = mongo.Db,
