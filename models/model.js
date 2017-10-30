@@ -7,7 +7,7 @@ var personSchema = new Schema({
 	surname: String,
 	firstname: String,
 	level: String,
-	matric_umber: String,
+	matric_number: String,
 	dateAdded : { type: Date, default: Date.now },
 })
 
