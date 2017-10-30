@@ -2,10 +2,7 @@ var express = require("express");
 var app = express();
 var student=require('./routes/students');
 var mongo = require('mongodb');
-var mongoose = require('mongoose');
 
-app.db = mongoose.connect(process.env.MONGOLAB_URI);
-console.log("connected to database");
 
 app.configure(function () {
     app.use(express.logger('dev'));     
