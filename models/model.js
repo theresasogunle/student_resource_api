@@ -3,7 +3,7 @@ var Schema = mongoose.Schema;
 
 // See http://mongoosejs.com/docs/schematypes.html
 
-var personSchema = new Schema({
+var studentSchema = new Schema({
 	surname: String,
 	firstname: String,
 	level: String,
@@ -12,4 +12,4 @@ var personSchema = new Schema({
 })
 
 // export 'Person' model so we can interact with it in other files
-module.exports = mongoose.model('Person',personSchema);
+module.exports = mongoose.model('Student',studentSchema);

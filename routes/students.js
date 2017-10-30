@@ -10,7 +10,7 @@ mongoose.connect('mongodb://root:root@ds123410.mlab.com:23410/heroku_2snqp2d4');
 
 
 // our db model
-var Person = require("../models/model.js");
+var Student = require("../models/model.js");
 
 /**
  * GET '/'
@@ -51,7 +51,7 @@ exports.create = function(req,res){
     var level = req.body.level;
    
 
-      var person = Person({
+      var student = Student({
         surname: surname,
         firstname: firstname,
         matric_number: matric_number,
@@ -61,20 +61,20 @@ exports.create = function(req,res){
 
       // now, save that person to the database
         // mongoose method, see http://mongoosejs.com/docs/api.html#model_Model-save      
-      person.save(function(err,data){
+      student.save(function(err,data){
         // if err saving, respond back with error
         if (err){
-            var jsonData = {status:'ERROR', message: 'Error saving person'};
+            var jsonData = {status:'ERROR', message: 'Error saving student'};
             return res.json(jsonData);
         }
 
-        console.log('saved a new person!');
+        console.log('saved a new student!');
         console.log(data);
 
         // now return the json data of the new person
         var jsonData = {
             status: 'OK',
-            person: data
+            student: data
         }
 
         return res.json(jsonData);
@@ -95,7 +95,7 @@ exports.getOne = function(req,res){
     var requestedId = req.param('id');
 
     // mongoose method, see http://mongoosejs.com/docs/api.html#model_Model.findById
-    Person.findById(requestedId, function(err,data){
+    Student.findById(requestedId, function(err,data){
 
         // if err or no user found, respond with error 
         if(err || data == null){
@@ -106,7 +106,7 @@ exports.getOne = function(req,res){
     // otherwise respond with JSON data of the user
     var jsonData = {
         status: 'OK',
-        person: data
+        student: data
     }
 
     return res.json(jsonData);
@@ -123,7 +123,7 @@ exports.getOne = function(req,res){
 exports.getAll = function(req,res){
 
     // mongoose method, see http://mongoosejs.com/docs/api.html#model_Model.find
-    Person.find(function(err, data){
+    Student.find(function(err, data){
         // if err or no users found, respond with error 
         if(err || data == null){
         var jsonData = {status:'ERROR', message: 'Could not find people'};
@@ -134,7 +134,7 @@ exports.getAll = function(req,res){
 
     var jsonData = {
         status: 'OK',
-        people: data
+        student: data
     }   
 
     res.json(jsonData);
@@ -166,7 +166,7 @@ exports.update = function(req,res){
     
 
       var dataToUpdate = {
-        surname: name,
+        surname: surname,
         firstname: firstname,
         matric_number: matric_number,
         level:level
@@ -175,14 +175,14 @@ exports.update = function(req,res){
 
       // now, update that person
         // mongoose method, see http://mongoosejs.com/docs/api.html#model_Model.findByIdAndUpdate  
-      Person.findByIdAndUpdate(requestedId, dataToUpdate, function(err,data){
+      Student.findByIdAndUpdate(requestedId, dataToUpdate, function(err,data){
         // if err saving, respond back with error
         if (err){
-            var jsonData = {status:'ERROR', message: 'Error updating person'};
+            var jsonData = {status:'ERROR', message: 'Error updating student data'};
             return res.json(jsonData);
         }
 
-        console.log('updated the person!');
+        console.log('updated the student data!');
         console.log(data);
 
         // now return the json data of the new person
@@ -210,9 +210,9 @@ exports.remove = function(req,res){
     var requestedId = req.param('id');
 
     // Mongoose method, http://mongoosejs.com/docs/api.html#model_Model.findByIdAndRemove
-    Person.findByIdAndRemove(requestedId,function(err, data){
+    Student.findByIdAndRemove(requestedId,function(err, data){
         if(err || data == null){
-        var jsonData = {status:'ERROR', message: 'Could not find that person to delete'};
+        var jsonData = {status:'ERROR', message: 'Could not find that student to delete'};
         return res.json(jsonData);
         }
 
