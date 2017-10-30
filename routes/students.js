@@ -1,8 +1,7 @@
 var mongo = require('mongodb');
 
 // Connect to the database before starting the application server.
-var mongoose = require('mongoose');
-app.db = mongoose.connect(process.env.MONGODB_URI);
+
 /*
 
 var Server = mongo.Server,
