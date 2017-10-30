@@ -92,4 +92,3 @@ exports.deleteStudent= function(req, res) {
         });
     });
 }
-
