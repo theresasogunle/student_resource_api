@@ -8,7 +8,7 @@ var server = new Server('localhost', 27017, {auto_reconnect: true});
 var db = mongo.Db(process.env.MONGOLAB_URI, {native_parser:true});
 
 //new database
-//db = new Db('studentdb', server);
+db = new Db('studentdb', server);
 //database authentication
 
 db.open(function(err, db) {
