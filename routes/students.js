@@ -1,12 +1,17 @@
-var mongo = require('mongodb');
-
+//var mongo = require('mongodb');
+const MongoClient = require('mongodb').MongoClient;
+const MONGO_URL = 'mongodb://root:root@ds051740.mlab.com:51740/heroku_xd1klxrw';
+MongoClient.connect(MONGO_URL, (err, db) => {  
+  if (err) {
+    return console.log(err);
+  }
+  });
+/*
 var Server = mongo.Server,
     Db = mongo.Db,
     BSON = mongo.BSONPure;
 
 var server = new Server('localhost', 27017, {auto_reconnect: true});
-//var db = mongo.Db(process.env.MONGOLAB_URI, {native_parser:true});
-
 //new database
 db = new Db('studentdb', server);
 //database authentication
@@ -23,6 +28,7 @@ db.open(function(err, db) {
     }
 });
 
+*/
 exports.findById = function(req, res) {
     var id = req.params.id;
     console.log('Retrieving student with an id of  : ' + id);
