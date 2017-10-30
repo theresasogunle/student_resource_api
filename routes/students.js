@@ -188,7 +188,7 @@ exports.update = function(req,res){
         // now return the json data of the new person
         var jsonData = {
             status: 'OK',
-            person: data
+            student: data
         }
 
         return res.json(jsonData);
