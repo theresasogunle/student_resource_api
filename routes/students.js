@@ -46,7 +46,7 @@ exports.create = function(req,res){
 
        
       student.save(function(err,data){
-       
+       if(err){
             var jsonData = {status:'ERROR', message: 'Error saving student'};
             return res.json(jsonData);
         }
